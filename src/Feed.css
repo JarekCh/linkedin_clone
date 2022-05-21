@@ -14,6 +14,7 @@
     border: 1px solid lightgray;
     border-radius: 30px;
     display: flex;
+    align-items: center;
     padding: 10px;
     color: gray;
     padding-left: 15px;
@@ -36,6 +37,10 @@
     display: none;
 }
 
+.feed__inputOptions {
+    display: flex;
+    justify-content: space-evenly;
+}
 
 
 
