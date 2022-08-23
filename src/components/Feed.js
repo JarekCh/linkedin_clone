@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './Feed.css';
+import '../styles/Feed.css';
 import CreateIcon from '@mui/icons-material/Create';
 import InputOption from './InputOption.js';
 import ImageIcon from '@mui/icons-material/Image';
@@ -7,7 +7,7 @@ import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
 import EventNoteIcon from '@mui/icons-material/EventNote';
 import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from './Post';
-import { db } from './firebase';
+import { db } from '../firebase';
 import firebase from 'firebase';
 
 function Feed() {
