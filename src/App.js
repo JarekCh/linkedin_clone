@@ -8,7 +8,7 @@ import Feed from './components/Feed';
 import Login from './components/Login';
 import { auth } from './firebase';
 
-function App() {
+const App = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -46,6 +46,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
 export default App;

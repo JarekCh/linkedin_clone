@@ -9,8 +9,12 @@ import CalendarViewDayIcon from '@mui/icons-material/CalendarViewDay';
 import Post from './Post';
 import { db } from '../firebase';
 import firebase from 'firebase';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../features/userSlice';
+import FlipMove from 'react-flip-move';
 
-function Feed() {
+const Feed = () => {
+  const user = useSelector(selectUser);
   const [input, setInput] = useState('');
   const [post, setPosts] = useState([]);
 
@@ -30,10 +34,10 @@ function Feed() {
   const sendPost = (e) => {
     e.preventDefault();
     db.collection('posts').add({
-      name: 'John Doe',
-      descryption: 'this is a test',
+      name: user.displayName,
+      descryption: user.email,
       message: input,
-      photoUrl: '',
+      photoUrl: user.photoUrl || '',
       timiestamp: firebase.firestore.FieldValue.serverTimestamp(),
     });
     setInput('');
@@ -68,17 +72,19 @@ function Feed() {
       </div>
 
       {/* POST */}
-      {post.map(({ id, data: { name, descryption, message, photoUrl } }) => (
-        <Post
-          key={id}
-          name={name}
-          description={descryption}
-          message={message}
-          photoUrl={photoUrl}
-        />
-      ))}
+      <FlipMove>
+        {post.map(({ id, data: { name, descryption, message, photoUrl } }) => (
+          <Post
+            key={id}
+            name={name}
+            description={descryption}
+            message={message}
+            photoUrl={photoUrl}
+          />
+        ))}
+      </FlipMove>
     </div>
   );
-}
+};
 
 export default Feed;
