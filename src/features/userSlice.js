@@ -1,11 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
-const initialState = {
-  value: 0,
-  status: 'idle',
-};
-
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
@@ -24,8 +18,7 @@ export const userSlice = createSlice({
 
 export const { login, logout } = userSlice.actions;
 
-// selector 
+// Selectors
 export const selectUser = (state) => state.user.user;
-
 
 export default userSlice.reducer;
