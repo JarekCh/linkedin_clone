@@ -7,8 +7,17 @@ import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { useDispatch } from 'react-redux';
+import { logout } from '../features/userSlice';
+import { auth } from '../firebase';
 
 function Header() {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
   return (
     <div className='header'>
       <div className='header__left'>
@@ -32,6 +41,7 @@ function Header() {
         <HeaderOption
           avatar='https://cdn.pixabay.com/photo/2017/08/01/08/29/woman-2563491_960_720.jpg'
           title='me'
+          onClick={logoutOfApp}
         />
       </div>
     </div>
