@@ -4,8 +4,10 @@ LinkedIn clone. Working features, user auth with Firebase via login page, log of
 
 Important note:
 
-- No RWD
+- No fully RWD
 - Meant for desktop
+
+Will be refactored in future.
 
 ## Technologies
 
