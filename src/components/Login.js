@@ -103,6 +103,11 @@ function Login() {
           Register Now
         </span>
       </p>
+      <div className='login__info'>
+        <p>Create Acc or use default one:</p>
+        <p>login: mobi12@gmail.com</p>
+        <p>password: 123456</p>
+      </div>
     </div>
   );
 }

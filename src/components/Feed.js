@@ -33,6 +33,7 @@ const Feed = () => {
 
   const sendPost = (e) => {
     e.preventDefault();
+
     db.collection('posts').add({
       name: user.displayName,
       descryption: user.email,

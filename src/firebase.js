@@ -7,7 +7,7 @@ const firebaseConfig = {
 
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
 
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  projectId: 'linkedin-clone-79277',
 
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
 

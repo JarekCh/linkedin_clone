@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
 import Login from './components/Login';
 import { auth } from './firebase';
+import Widgets from './components/Widgets';
 
 const App = () => {
   const user = useSelector(selectUser);
@@ -33,16 +34,17 @@ const App = () => {
 
   return (
     <div className='app'>
-      <Header />
-
       {!user ? (
         <Login />
       ) : (
-        <div className='app__body'>
-          <Sidebar />
-          <Feed />
-          {/* Widgets */}
-        </div>
+        <>
+          <Header />
+          <div className='app__body'>
+            <Sidebar />
+            <Feed />
+            <Widgets />
+          </div>
+        </>
       )}
     </div>
   );
